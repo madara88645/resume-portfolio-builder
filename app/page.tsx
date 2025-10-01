@@ -29,7 +29,7 @@ export default function HomePage() {
           <div className="rounded-2xl border border-slate-800 bg-slate-900/40 p-8 shadow-xl">
             <h2 className="text-xl font-semibold text-white">Coming soon</h2>
             <ul className="mt-6 list-inside list-disc space-y-2 text-sm text-slate-300">
-              <li>LinkedIn "About Me" automation</li>
+              <li>LinkedIn &ldquo;About Me&rdquo; automation</li>
               <li>Visual timeline & skill bars</li>
               <li>English & Turkish variants</li>
             </ul>
