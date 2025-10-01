@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { FileDropzone } from "./FileDropzone";
 import { LinkedInURLForm } from "./LinkedInURLForm";
+import { SampleResumePicker } from "./SampleResumePicker";
 import { useGeneration } from "@/components/ai/useGeneration";
 import { WizardStep } from "@/components/upload/WizardStep";
 
@@ -37,7 +38,7 @@ export function UploadWizard() {
       <div className="flex flex-col gap-8">
         <WizardProgress steps={steps} active={activeStep} />
 
-        <section className="grid gap-6 md:grid-cols-2">
+        <section className="grid gap-6 lg:grid-cols-3">
           <FileDropzone
             disabled={status === "processing"}
             onUpload={async (file: File) => {
@@ -49,6 +50,13 @@ export function UploadWizard() {
             disabled={status === "processing"}
             onSubmit={async (url: string) => {
               await submitUpload({ linkedInUrl: url });
+            }}
+          />
+
+          <SampleResumePicker
+            disabled={status === "processing"}
+            onSelect={async (file: File) => {
+              await submitUpload({ file });
             }}
           />
         </section>

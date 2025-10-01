@@ -1,0 +1,66 @@
+John Doe
+Senior Full-Stack Developer
+Email: john.doe@email.com | Phone: +1-555-0123
+LinkedIn: linkedin.com/in/johndoe | GitHub: github.com/johndoe
+San Francisco, CA
+
+PROFESSIONAL SUMMARY
+Experienced Full-Stack Developer with 8+ years of expertise in building scalable web applications. Specialized in React, Node.js, and cloud technologies. Proven track record of leading development teams and delivering high-impact projects.
+
+WORK EXPERIENCE
+
+Senior Full-Stack Developer | Tech Innovators Inc. | Jan 2020 - Present
+• Led development of microservices architecture serving 2M+ daily active users
+• Architected and implemented real-time collaboration features using WebSockets
+• Reduced application load time by 40% through performance optimization
+• Mentored team of 5 junior developers and conducted code reviews
+• Technologies: React, TypeScript, Node.js, PostgreSQL, AWS, Docker, Kubernetes
+
+Full-Stack Developer | Digital Solutions LLC | Jun 2017 - Dec 2019
+• Developed and maintained 15+ client-facing web applications
+• Implemented CI/CD pipeline reducing deployment time by 60%
+• Integrated third-party APIs (Stripe, SendGrid, Twilio) for payment and communication
+• Collaborated with UX team to improve user engagement by 35%
+• Technologies: React, Express.js, MongoDB, Redux, Jest, Jenkins
+
+Junior Web Developer | StartUp Studios | Jan 2016 - May 2017
+• Built responsive landing pages and marketing websites
+• Implemented RESTful APIs for mobile applications
+• Participated in agile development process and daily standups
+• Technologies: JavaScript, HTML5, CSS3, Bootstrap, jQuery, PHP, MySQL
+
+EDUCATION
+
+Bachelor of Science in Computer Science | University of California, Berkeley | 2015
+• GPA: 3.8/4.0
+• Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems
+
+TECHNICAL SKILLS
+
+Programming Languages: JavaScript, TypeScript, Python, Java, SQL
+Frontend: React, Next.js, Vue.js, Redux, HTML5, CSS3, Tailwind CSS, Material-UI
+Backend: Node.js, Express.js, Django, FastAPI, GraphQL, RESTful APIs
+Databases: PostgreSQL, MongoDB, MySQL, Redis
+DevOps & Cloud: AWS (EC2, S3, Lambda, RDS), Docker, Kubernetes, CI/CD, GitHub Actions
+Tools: Git, VS Code, Postman, Jira, Figma
+
+PROJECTS
+
+E-Commerce Platform | github.com/johndoe/ecommerce
+• Built full-featured e-commerce platform with shopping cart, payment integration, and admin panel
+• Technologies: Next.js, Stripe API, PostgreSQL, Tailwind CSS
+• 500+ GitHub stars
+
+Real-Time Chat Application | github.com/johndoe/chat-app
+• Developed real-time messaging app with video call functionality
+• Technologies: React, Socket.io, WebRTC, Node.js, MongoDB
+• Deployed on AWS with 99.9% uptime
+
+CERTIFICATIONS & AWARDS
+• AWS Certified Solutions Architect - Associate (2022)
+• Google Cloud Professional Developer (2021)
+• Hackathon Winner - TechCrunch Disrupt (2019)
+
+LANGUAGES
+• English - Native
+• Spanish - Professional Working Proficiency
