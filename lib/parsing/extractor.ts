@@ -3,7 +3,6 @@
  * Supports PDF parsing via pdf-parse and DOCX parsing via mammoth.
  */
 import mammoth from "mammoth";
-// @ts-ignore - pdf-parse doesn't have types
 import pdfParse from "pdf-parse";
 
 /**
