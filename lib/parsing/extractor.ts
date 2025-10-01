@@ -3,7 +3,6 @@
  * Supports PDF parsing via pdf-parse and DOCX parsing via mammoth.
  */
 import mammoth from "mammoth";
-import pdfParse from "pdf-parse";
 
 /**
  * Extracts text from uploaded file based on MIME type
@@ -47,10 +46,13 @@ export async function extractTextFromFile(file: File): Promise<string> {
 }
 
 /**
- * Extracts text from PDF file using pdf-parse
+ * Extracts text from PDF file using pdf-parse (dynamic import to avoid build issues)
  */
 async function extractPdfText(file: File): Promise<string> {
   try {
+    // Dynamic import to avoid pdf-parse test file issues during build
+    const pdfParse = (await import("pdf-parse")).default;
+    
     const arrayBuffer = await file.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
     const data = await pdfParse(buffer);

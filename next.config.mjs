@@ -19,6 +19,26 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: false,
   },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      // Ignore canvas (used by pdf-parse but not needed)
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        canvas: false,
+      };
+    }
+    
+    // Ignore pdf-parse test files during build
+    config.plugins = config.plugins || [];
+    config.plugins.push(
+      new (require('webpack').IgnorePlugin)({
+        resourceRegExp: /^\.\/test\//,
+        contextRegExp: /pdf-parse/,
+      })
+    );
+    
+    return config;
+  },
 };
 
 export default nextConfig;
