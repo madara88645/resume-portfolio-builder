@@ -1,35 +1,108 @@
-# AI-Powered Résumé & Portfolio Builder
+<div align="center">
+
+# 🤖 AI-Powered Resume & Portfolio Builder
+
+### Transform your CV into a stunning portfolio in seconds with AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Next.js](https://img.shields.io/badge/Next.js-14.1-black)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue)](https://www.typescriptlang.org/)
-[![OpenAI](https://img.shields.io/badge/OpenAI-API-green)](https://openai.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.2-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)](https://www.typescriptlang.org/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4-green)](https://openai.com/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/madara88645/resume-portfolio-builder/pulls)
 
-🌍 **[English](#english)** | **[Türkçe](#türkçe)**
+[Features](#-features) • [Demo](#-demo) • [Quick Start](#-quick-start) • [Tech Stack](#-tech-stack) • [Contributing](#-contributing)
+
+</div>
 
 ---
 
-## English
+## 🌟 Features
 
-This project delivers an AI-assisted workflow for transforming a candidate's CV or LinkedIn profile into a polished single-page portfolio ready to download and share. The codebase is structured for rapid MVP delivery (Phase 1) with clear extension points for later phases (visual enhancements, UX improvements, growth features).
+- 📄 **Multi-Format Support** - Upload PDF, DOCX, or TXT resumes
+- 🤖 **AI-Powered Parsing** - Intelligent data extraction using OpenAI
+- 🎨 **Beautiful Portfolios** - Generate polished single-page portfolios
+- 📱 **Fully Responsive** - Works on desktop, tablet, and mobile
+- 🎯 **Sample Resumes** - Test with pre-built professional examples
+- ⬇️ **Easy Export** - Download as HTML or share via link
+- 🔄 **Mock Mode** - Works without OpenAI API key for testing
+- 🎭 **Multiple Themes** - Coming soon!
 
-## Getting Started
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 18.17+ (includes `npm`).
-- An OpenAI API key if you want to test live generations (otherwise the mock pipeline runs).
+- Node.js 18.17+ (includes npm)
+- OpenAI API key (optional - mock mode available)
 
-1. **Install dependencies**
-  ```bash
-  npm install
-  ```
-2. **Run the development server**
-  ```bash
-  npm run dev
-  ```
-3. Open [http://localhost:3000](http://localhost:3000) to view the app.
+### Installation
 
-## Project Structure
+```bash
+# Clone the repository
+git clone https://github.com/madara88645/resume-portfolio-builder.git
+cd resume-portfolio-builder
+
+# Install dependencies
+npm install
+
+# Create environment file (optional)
+cp .env.example .env.local
+# Add your OPENAI_API_KEY to .env.local
+
+# Run development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) 🎉
+
+---
+
+## 📖 How It Works
+
+1. **Upload** - Drop your PDF/DOCX resume or paste LinkedIn URL
+2. **AI Magic** - Our AI extracts and structures your information
+3. **Generate** - Get a beautiful, professional portfolio in seconds
+4. **Download** - Save as HTML or share via unique link
+
+---
+
+## 🎬 Demo
+
+Try it with our sample resumes:
+- 👨‍💻 Full-Stack Developer (8+ years)
+- 📊 Digital Marketing Manager (MBA)
+
+*Live demo: Coming soon on Vercel!*
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Language:** [TypeScript](https://www.typescriptlang.org/)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components:** [Headless UI](https://headlessui.com/)
+- **Icons:** [Heroicons](https://heroicons.com/)
+- **Forms:** [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/)
+
+### Backend & AI
+- **AI Provider:** [OpenAI GPT-4](https://openai.com/)
+- **File Parsing:** 
+  - PDF: [pdf-parse](https://www.npmjs.com/package/pdf-parse)
+  - DOCX: [mammoth](https://www.npmjs.com/package/mammoth)
+- **State Management:** [SWR](https://swr.vercel.app/)
+- **Validation:** [Zod Schemas](https://zod.dev/)
+
+### Development
+- **Package Manager:** npm
+- **Linting:** ESLint
+- **Type Checking:** TypeScript
+- **Build Tool:** Next.js built-in
+
+---
+
+## 📁 Project Structure
 
 ```
 .
@@ -85,31 +158,128 @@ If any OpenAI call fails, the pipeline automatically falls back to the determini
 - **Phase 4 – Growth**
   - Accounts, analytics, QR sharing, freemium model
 
-## Configuration
+## ⚙️ Configuration
 
-Set the following environment variables (see `.env.example` for the latest list):
+### Environment Variables
 
-- `OPENAI_API_KEY` – primary AI provider key
-- `OPENAI_MODEL` (optional) – default OpenAI model (defaults to `gpt-4o-mini`)
-- `OPENAI_PARSER_MODEL`, `OPENAI_SUMMARY_MODEL`, `OPENAI_PORTFOLIO_MODEL` (optional overrides)
-- `RESUME_STORAGE_BUCKET` – object storage bucket for generated assets
-- `DATABASE_URL` – Postgres connection string
+Create a `.env.local` file:
 
-## Contributing
+```env
+# OpenAI Configuration (Optional)
+OPENAI_API_KEY=your_api_key_here
+OPENAI_MODEL=gpt-4o-mini
 
-1. Create a feature branch.
-2. Ensure `npm run lint` and `npm run test` pass.
-3. Open a pull request describing your changes and the relevant phase/feature.
+# Optional overrides
+OPENAI_PARSER_MODEL=gpt-4o-mini
+OPENAI_SUMMARY_MODEL=gpt-4o-mini
+OPENAI_PORTFOLIO_MODEL=gpt-4o-mini
+```
 
-For detailed contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+See [`.env.example`](.env.example) for all options.
 
-## License
+---
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+## 🚀 Deploy
 
-## Security
+### Deploy to Vercel (Recommended)
 
-For security concerns, please review our [Security Policy](SECURITY.md).
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/madara88645/resume-portfolio-builder)
+
+1. Click the button above
+2. Add your `OPENAI_API_KEY` in Environment Variables
+3. Deploy!
+
+### Manual Deploy
+
+```bash
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+---
+
+## 🗺️ Roadmap
+
+### ✅ Phase 1 - MVP (Current)
+- [x] Multi-format file upload (PDF, DOCX, TXT)
+- [x] AI-powered parsing with OpenAI
+- [x] Sample resume examples
+- [x] HTML portfolio generation
+- [x] Mock generator fallback
+
+### 🔜 Phase 2 - Enhancements
+- [ ] Multiple themes & templates
+- [ ] LinkedIn text generator
+- [ ] Visual timeline
+- [ ] PDF export
+- [ ] Multi-language (EN/TR)
+
+### 🔜 Phase 3 - UX
+- [ ] Inline editing
+- [ ] Real-time preview
+- [ ] Theme customization
+- [ ] Dark mode
+
+### 🔜 Phase 4 - Growth
+- [ ] User accounts
+- [ ] Analytics
+- [ ] Social sharing
+- [ ] Freemium model
+
+## 🤝 Contributing
+
+We love contributions! Here's how you can help:
+
+1. 🍴 Fork the repository
+2. 🌿 Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. ✨ Make your changes
+4. ✅ Run `npm run lint` and `npm run build`
+5. 📝 Commit your changes (`git commit -m 'Add amazing feature'`)
+6. 🚀 Push to the branch (`git push origin feature/amazing-feature`)
+7. 🎉 Open a Pull Request
+
+For detailed guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Good First Issues
+Looking for something to work on? Check out issues labeled [`good first issue`](https://github.com/madara88645/resume-portfolio-builder/labels/good%20first%20issue)!
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+Free to use for personal and commercial projects! ✨
+
+---
+
+## 🔒 Security
+
+Found a security issue? Please review our [Security Policy](SECURITY.md) and report responsibly.
+
+---
+
+## 📞 Support & Community
+
+- 🐛 [Report Bug](https://github.com/madara88645/resume-portfolio-builder/issues/new?template=bug_report.md)
+- 💡 [Request Feature](https://github.com/madara88645/resume-portfolio-builder/issues/new?template=feature_request.md)
+- 📖 [Documentation](https://github.com/madara88645/resume-portfolio-builder/wiki)
+- ⭐ [Star on GitHub](https://github.com/madara88645/resume-portfolio-builder)
+
+---
+
+## 💖 Show Your Support
+
+If this project helped you, please consider:
+- ⭐ Starring the repository
+- 🐦 Sharing on social media
+- 💬 Telling your friends
+- ☕ [Buying me a coffee](https://buymeacoffee.com/madara88645) (optional)
+
+---
 
 ---
 
