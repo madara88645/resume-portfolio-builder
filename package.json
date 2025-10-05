@@ -1,12 +1,39 @@
 {
   "name": "ai-powered-resume-portfolio-builder",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "description": "Transform your CV into a stunning portfolio in seconds with AI-powered parsing and generation",
+  "author": {
+    "name": "madara88645",
+    "url": "https://github.com/madara88645"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madara88645/resume-portfolio-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/madara88645/resume-portfolio-builder/issues"
+  },
+  "homepage": "https://github.com/madara88645/resume-portfolio-builder#readme",
+  "keywords": [
+    "ai",
+    "resume",
+    "portfolio",
+    "cv",
+    "openai",
+    "nextjs",
+    "typescript",
+    "pdf-parser",
+    "career",
+    "job-search"
+  ],
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
