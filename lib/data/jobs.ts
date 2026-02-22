@@ -9,7 +9,10 @@ type JobRecord = {
   updatedAt: Date;
 };
 
-const jobs = new Map<string, JobRecord>();
+// Pin the Map to globalThis so all route compilations share the same instance.
+const globalWithJobs = globalThis as typeof globalThis & { _jobs?: Map<string, JobRecord> };
+if (!globalWithJobs._jobs) globalWithJobs._jobs = new Map<string, JobRecord>();
+const jobs = globalWithJobs._jobs;
 
 export function createJob(): JobRecord {
   const id = crypto.randomUUID();
