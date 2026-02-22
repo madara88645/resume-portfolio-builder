@@ -5,7 +5,10 @@ export type StoredAsset = {
   downloadUrl: string;
 };
 
-const htmlStore = new Map<string, string>();
+// Pin the Map to globalThis so all route compilations share the same instance.
+const globalWithStore = globalThis as typeof globalThis & { _htmlStore?: Map<string, string> };
+if (!globalWithStore._htmlStore) globalWithStore._htmlStore = new Map<string, string>();
+const htmlStore = globalWithStore._htmlStore;
 
 function buildDownloadUrl(html: string) {
   return `data:text/html;charset=utf-8,${encodeURIComponent(html)}`;
