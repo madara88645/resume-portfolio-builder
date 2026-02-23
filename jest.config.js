@@ -9,6 +9,7 @@ const config = {
   transform: {
     "^.+\\.tsx?$": ["ts-jest", { tsconfig: { module: "commonjs" } }],
   },
+  setupFiles: ["<rootDir>/jest.setup.js"],
 };
 
 module.exports = config;
